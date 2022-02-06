@@ -9,3 +9,4 @@ export interface ProductInterface extends Document {
     readonly blnActive: boolean;
     readonly createdAt: Date; 
 }
+

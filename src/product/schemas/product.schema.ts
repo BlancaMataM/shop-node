@@ -1,5 +1,5 @@
-import { Schema } from 'mongoose';
-
+import { Mongoose, Schema } from 'mongoose';
+// const mongoose = require("mongoose");
 export const ProductSchema = new Schema({
     strName: {
         type: String, 
@@ -22,3 +22,6 @@ export const ProductSchema = new Schema({
         default: Date.now
     }
 });
+
+
+;

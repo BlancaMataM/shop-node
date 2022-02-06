@@ -48,7 +48,6 @@ export class ProductController {
     async getProducts(@Res() res) {
 
         try {
-            console.log('product');
             const product: any = await this.productService.getProducts();
             if (product.length <= 0) return res.status(404).json({
                 ok: false,
@@ -80,7 +79,6 @@ export class ProductController {
     @Get('/idProdut')
     async getProduct(@Res() res, @Query('productID') productID) {
         try {
-            console.log('produc');
             const product = await this.productService.getProduct(productID);
             if (!product) return res.status(404).json({
                 ok: false,
@@ -193,7 +191,6 @@ export class ProductController {
             }
         });
         } catch (err) {
-            // console.log(err);
             return res.status(500).json({
                 ok: false,
                 resp: 500,

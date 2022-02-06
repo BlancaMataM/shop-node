@@ -7,3 +7,4 @@ export class CreateProductDTO {
     readonly blnActive: boolean;
     readonly createdAt: Date; 
 }
+

@@ -7,6 +7,7 @@ import { LoginModule } from './login/login.module';
 import { LoginService } from './login/login.service';
 import { ProductModule } from './product/product.module';
 import { ShopModule } from './shop/shop.module';
+import { ShopCartModule } from './shop-cart/shop-cart.module';
 
 
 
@@ -15,7 +16,8 @@ import { ShopModule } from './shop/shop.module';
     ProductModule, 
     ShopModule,
     MongooseModule.forRoot('mongodb://localhost/bdShop'),
-    LoginModule
+    LoginModule,
+    ShopCartModule
   ],
   controllers: [AppController],
   providers: [

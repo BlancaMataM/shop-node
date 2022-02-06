@@ -26,13 +26,9 @@ export class ProductService {
     return await found;
        
    }
-
-
     async createProduct(createProductDTO: CreateProductDTO):Promise<ProductInterface> {
-        // const found = await this.productModule.findOne(createProductDTO);
         const postProduct: any =  await new this.productModule(createProductDTO);
         return await postProduct.save();
-      
     }
 
     async deleteProduct(productID: string, blnActive: boolean): Promise<ProductInterface>{

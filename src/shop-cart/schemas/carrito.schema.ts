@@ -1,10 +1,27 @@
 import { Schema } from 'mongoose';
-import { ProductSchema } from 'src/product/schemas/product.schema';
 
+// export const CarProductSchema = new Schema({
+//     idCardProduct: {
+//         // type: Mongoose.Types.ObjectId,
+//         ref: CarSchema,
+//     },
+//     createdAt: {
+//         type: Date, 
+//         default: Date.now
+//     }
+// })
 export const CarSchema = new Schema({
-   aJsnProductos: [ProductSchema],
+    strName: {
+        type: String, 
+        required: true
+    },
+    strDescription: {
+        type: String, 
+    },
+    aJsnProduct: [],
     createdAt: {
         type: Date, 
         default: Date.now
     }
 });
+

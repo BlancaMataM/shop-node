@@ -14,7 +14,6 @@ export class ShopService {
    
        async getShop(shopID: string): Promise<ShopInterface> {
         const shop: any = await this.shopModel.findById(shopID);
-        console.log(shop);
         return shop;
     }
       async getFoundShop(strName: string): Promise<ShopInterface> {

@@ -10,7 +10,6 @@ export class ShopController {
     @Post('/')
     async createPost(@Res() res, @Body() shopDTO: ShopDTO) {
       try {
-          console.log('holaaaaa');
           const found = await this.shopService.getFoundShop(shopDTO.strName)
           if (found) {
               return res.status().json({
@@ -79,7 +78,6 @@ export class ShopController {
 
     @Get('/idShop')
     async getShop(@Res() res, @Query('shopID') shopID) {
-        // console.log('Shop');
         try {
             const shop = await this.shopService.getShop(shopID);
             if (!shop) return res.status(404).json({
@@ -172,7 +170,6 @@ export class ShopController {
     async updateShop(@Res() res, @Body() shopDTO: ShopDTO, @Query('shopID') shopID){
 
         try {
-            console.log('actualiza');
            const shop =  await this.shopService.updateShop(shopID, shopDTO);
            if (!shop) {
             return res.status(404).json({
@@ -194,7 +191,7 @@ export class ShopController {
             }
         });
         } catch (err) {
-            // console.log(err);
+
             return res.status(500).json({
                 ok: false,
                 resp: 500,

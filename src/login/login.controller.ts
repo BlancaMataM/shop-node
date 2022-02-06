@@ -19,7 +19,7 @@ export class LoginController {
             if (userDTO.strPassword) {
                 userDTO.strPassword = bcrypt.hashSync(userDTO.strPassword, 12);
             }
-            console.log(userDTO.strEmail);
+
             const fount = await this.loginService.getFoundPerson(userDTO.strEmail);
             if (fount) {
                 return res.status(400).json({
@@ -51,7 +51,6 @@ export class LoginController {
                 }
             });
         } catch (err) {
-            console.log(err);
             return res.status(500).json({
                 ok: false,
                 resp: 500,
@@ -68,7 +67,6 @@ export class LoginController {
     async login(@Res() res, @Res({passthrough: true}) response,  @Body() userDTO: UserDTO) {
 
         try {
-            console.log('holi');
             const user = await this.loginService.getFoundPerson(userDTO.strEmail);
 
             if (!user) {
@@ -82,7 +80,7 @@ export class LoginController {
                 });
             }
 
-            if (!await bcrypt.compare(userDTO.strPassword, user.strPassword)) {
+            if (!bcrypt.compare(userDTO.strPassword, user.strPassword)) {
                 return res.status(404).json({
                     ok: false, 
                     resp: 404, 

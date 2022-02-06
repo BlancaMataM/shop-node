@@ -1,5 +1,6 @@
-export class CarDTO {
+export class CreateCartDTO {
     readonly _id: string;
-    readonly aJsnProductos: any[] = []
+    readonly strName: string; 
+    readonly strDescription: string;
     readonly createdAt: Date; 
 }

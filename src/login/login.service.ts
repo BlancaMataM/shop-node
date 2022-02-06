@@ -9,7 +9,6 @@ export class LoginService {
 
     async register(userDTO: UserDTO){
         const respRegister: any = await new this.loginModule(userDTO);
-        console.log(respRegister);
         return await respRegister.save();
     }
     async getFoundPerson(strEmail: string): Promise<UserInterface> {
